@@ -1,4 +1,13 @@
-﻿using System;
+﻿// Program.cs
+//
+// Comments : 
+// Date     : 2021/02/22
+// Author   : Maciej Regulski
+// <copyright file="Program.cs" company="Datacom Maciej Regulski">
+//     Copyright (c) Maciej Regulski.
+// </copyright>
+
+using System;
 using System.IO;
 
 namespace SumFinder
@@ -18,15 +27,19 @@ namespace SumFinder
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Nie można znaleźć pliku z danymi:{Environment.NewLine}{filePath}");
             }
+            
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
+            
             var input = new ReadInput().ParseNumbersFile(filePath);
             if (input.Count > 1)
             {
                 decimal target = input[0];
+                // First number is expected result.
                 input.RemoveAt(0);
                 new SumFinder().FindSums(input, target);
             }
+            
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Naciśnij Enter");

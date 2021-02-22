@@ -1,4 +1,13 @@
-﻿using System;
+﻿// SumFinder.cs
+//
+// Comments : 
+// Date     : 2021/02/22
+// Author   : Maciej Regulski
+// <copyright file="SumFinder.cs" company="Datacom Maciej Regulski">
+//     Copyright (c) Maciej Regulski.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 
 namespace SumFinder
