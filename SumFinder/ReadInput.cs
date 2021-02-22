@@ -9,6 +9,9 @@ namespace SumFinder
     {
         private const string InputFileName = "numbers.txt";
 
+        /// <summary>
+        /// Gets the path of the running assembly.
+        /// </summary>
         public static string AssemblyDirectory
         {
             get
@@ -20,8 +23,17 @@ namespace SumFinder
             }
         }
 
+        /// <summary>
+        /// Gets the path of the input text file.
+        /// </summary>
         public static string InputFilePath => Path.Combine(AssemblyDirectory, InputFileName);
 
+        /// <summary>
+        /// Reads the input text file line by line and parses the decimal numbers.
+        /// Replaces decimal point separator according to system environment settings.
+        /// </summary>
+        /// <param name="filePath">The path of the input text file.</param>
+        /// <returns>List of the parsed numbers.</returns>
         public List<decimal> ParseNumbersFile(string filePath)
         {
             var list = new List<decimal>();
