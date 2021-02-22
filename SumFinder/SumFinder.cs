@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SumFinder
 {
@@ -16,6 +17,8 @@ namespace SumFinder
     //public class SumFinder<T> where T : struct, IComparable<T>, IComparable, IConvertible, IEquatable<T>, IFormattable
     public class SumFinder
     {
+        private decimal delta = .001m;
+
         public void FindSums(List<decimal> numbers, decimal target)
         {
             SumUpRecursive(numbers, target, new List<decimal>());
@@ -30,14 +33,20 @@ namespace SumFinder
                 sum += num;
             }
 
-            if (sum > target)
+            if (Math.Abs(sum - target) < delta)
             {
-                return;
+                // Values are within specified tolerance of each other...
+                Console.WriteLine("Znaleziono sumę w granicach tolerancji: " + string.Join("+", partial.ToArray()) + "=" + partial.Sum());
             }
 
             if (sum == target)
             {
                 Console.WriteLine("Znaleziono sumę: " + string.Join("+", partial.ToArray()) + "=" + target);
+            }
+
+            if (sum > target)
+            {
+                return;
             }
 
             for (int i = 0; i < numbers.Count; i++)

@@ -16,7 +16,7 @@ namespace SumFinder
 {
     public class ReadInput
     {
-        private const string InputFileName = "numbers.txt";
+        private const string InputFileName = "numbers2.txt";
 
         public static string AssemblyDirectory
         {

@@ -53,6 +53,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="numbers2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="numbers.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

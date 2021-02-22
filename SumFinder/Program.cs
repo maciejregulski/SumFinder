@@ -9,6 +9,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 
 namespace SumFinder
 {
@@ -34,9 +35,15 @@ namespace SumFinder
             var input = new ReadInput().ParseNumbersFile(filePath);
             if (input.Count > 1)
             {
-                decimal target = input[0];
                 // First number is expected result.
+                decimal target = input[0];
                 input.RemoveAt(0);
+                Console.WriteLine($"Szukam sumy cząstkowej dającej wartość: {target}");
+
+                // Sum all the elements
+                var sum = input.Sum();
+                Console.WriteLine($"Suma wszystkich {input.Count} wartości z listy: {sum}");
+
                 new SumFinder().FindSums(input, target);
             }
             
