@@ -17,7 +17,10 @@ namespace SumFinder
     //public class SumFinder<T> where T : struct, IComparable<T>, IComparable, IConvertible, IEquatable<T>, IFormattable
     public class SumFinder
     {
-        private decimal delta = .001m;
+        /// <summary>
+        /// Define a tolerance value.
+        /// </summary>
+        private decimal delta = .05m;
 
         public void FindSums(List<decimal> numbers, decimal target)
         {
@@ -33,15 +36,15 @@ namespace SumFinder
                 sum += num;
             }
 
+            // Values are within specified tolerance of each other
             if (Math.Abs(sum - target) < delta)
             {
-                // Values are within specified tolerance of each other...
-                Console.WriteLine("Znaleziono sumę w granicach tolerancji: " + string.Join("+", partial.ToArray()) + "=" + partial.Sum());
+                Console.WriteLine($"Znaleziono sumę cząstkową w granicach tolerancji: {string.Join("+", partial.ToArray())}={partial.Sum()}");
             }
 
             if (sum == target)
             {
-                Console.WriteLine("Znaleziono sumę: " + string.Join("+", partial.ToArray()) + "=" + target);
+                Console.WriteLine($"Znaleziono sumę cząstkową: {string.Join("+", partial.ToArray())}={target}");
             }
 
             if (sum > target)
