@@ -7,7 +7,6 @@ namespace SumFinder
     {
         static void Main(string[] args)
         {
-            //var numbers = new List<decimal>() { 3.1m, 9, 8, 4, 5, 7, 10 };
             string filePath = ReadInput.InputFilePath;
             if (File.Exists(filePath))
             {
