@@ -1,3 +1,3 @@
-# Find all possible sums that give the specified result
+# Finding all possible combinations of numbers to reach a given sum
 
 Dla Mariolki, powodzenia!
