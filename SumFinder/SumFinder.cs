@@ -20,7 +20,7 @@ namespace SumFinder
         /// <summary>
         /// Define a tolerance value.
         /// </summary>
-        private decimal delta = .05m;
+        private decimal delta = decimal.Zero;
 
         /// <summary>
         /// Finds all possible combinations of numbers to reach a given sum.
@@ -48,14 +48,14 @@ namespace SumFinder
             }
 
             // Values are within specified tolerance of each other
-            if (Math.Abs(sum - target) < delta)
+            if (delta != decimal.Zero && Math.Abs(sum - target) < delta)
             {
                 Console.WriteLine($"Znaleziono sumę cząstkową w granicach tolerancji: {string.Join("+", partial.ToArray())}={partial.Sum()}");
             }
 
             if (sum == target)
             {
-                Console.WriteLine($"Znaleziono sumę cząstkową: {string.Join("+", partial.ToArray())}={target}");
+                Console.WriteLine($"({string.Join("+", partial.ToArray())})={target}");
             }
 
             if (sum > target)

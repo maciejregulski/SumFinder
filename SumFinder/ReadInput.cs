@@ -16,7 +16,7 @@ namespace SumFinder
 {
     public class ReadInput
     {
-        private const string InputFileName = "numbers2.txt";
+        public string FileName { get; set; }
 
         /// <summary>
         /// Gets the path of the running assembly.
@@ -35,7 +35,7 @@ namespace SumFinder
         /// <summary>
         /// Gets the path of the input text file.
         /// </summary>
-        public static string InputFilePath => Path.Combine(AssemblyDirectory, InputFileName);
+        public string InputFilePath => Path.Combine(AssemblyDirectory, this.FileName);
 
         /// <summary>
         /// Reads the input text file line by line and parses the decimal numbers.
