@@ -1,0 +1,23 @@
+﻿sprawdzamy jaka sekwencja których wartiści faktur sumuje sie do kwoty
+18232,41
+
+wariant I - tylko faktury z 2014roku
+
+3296,31
+457,26
+1705,55
+391,68
+3967,72
+375,6
+6558,94
+285,88
+1809,16
+257
+4231,79
+2195,32
+49,4
+12046,83
+18,68
+2061,13
+593,27
+9127,71

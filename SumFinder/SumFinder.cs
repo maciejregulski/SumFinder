@@ -1,5 +1,15 @@
-﻿using System;
+﻿// SumFinder.cs
+//
+// Comments : 
+// Date     : 2021/02/22
+// Author   : Maciej Regulski
+// <copyright file="SumFinder.cs" company="Datacom Maciej Regulski">
+//     Copyright (c) Maciej Regulski.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SumFinder
 {
@@ -8,10 +18,17 @@ namespace SumFinder
     public class SumFinder
     {
         /// <summary>
+<<<<<<< HEAD
         /// Finds all possible combinations of numbers to reach a given sum.
         /// </summary>
         /// <param name="numbers">Input numbers.</param>
         /// <param name="target">Final number.</param>
+=======
+        /// Define a tolerance value.
+        /// </summary>
+        private decimal delta = .05m;
+
+>>>>>>> cdb2c427a5f58b8fdbbbb1bd62840e03c5448870
         public void FindSums(List<decimal> numbers, decimal target)
         {
             SumUpRecursive(numbers, target, new List<decimal>());
@@ -32,14 +49,24 @@ namespace SumFinder
                 sum += num;
             }
 
-            if (sum > target)
+            // Values are within specified tolerance of each other
+            if (Math.Abs(sum - target) < delta)
             {
-                return;
+                Console.WriteLine($"Znaleziono sumę cząstkową w granicach tolerancji: {string.Join("+", partial.ToArray())}={partial.Sum()}");
             }
 
             if (sum == target)
             {
+<<<<<<< HEAD
                 Console.WriteLine($"Znaleziono sumę: {string.Join("+", partial.ToArray())}={target}");
+=======
+                Console.WriteLine($"Znaleziono sumę cząstkową: {string.Join("+", partial.ToArray())}={target}");
+            }
+
+            if (sum > target)
+            {
+                return;
+>>>>>>> cdb2c427a5f58b8fdbbbb1bd62840e03c5448870
             }
 
             for (int i = 0; i < numbers.Count; i++)
