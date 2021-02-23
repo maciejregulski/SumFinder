@@ -18,17 +18,15 @@ namespace SumFinder
     public class SumFinder
     {
         /// <summary>
-<<<<<<< HEAD
-        /// Finds all possible combinations of numbers to reach a given sum.
-        /// </summary>
-        /// <param name="numbers">Input numbers.</param>
-        /// <param name="target">Final number.</param>
-=======
         /// Define a tolerance value.
         /// </summary>
         private decimal delta = .05m;
 
->>>>>>> cdb2c427a5f58b8fdbbbb1bd62840e03c5448870
+        /// <summary>
+        /// Finds all possible combinations of numbers to reach a given sum.
+        /// </summary>
+        /// <param name="numbers">Input numbers.</param>
+        /// <param name="target">Final number.</param>
         public void FindSums(List<decimal> numbers, decimal target)
         {
             SumUpRecursive(numbers, target, new List<decimal>());
@@ -57,16 +55,12 @@ namespace SumFinder
 
             if (sum == target)
             {
-<<<<<<< HEAD
-                Console.WriteLine($"Znaleziono sumę: {string.Join("+", partial.ToArray())}={target}");
-=======
                 Console.WriteLine($"Znaleziono sumę cząstkową: {string.Join("+", partial.ToArray())}={target}");
             }
 
             if (sum > target)
             {
                 return;
->>>>>>> cdb2c427a5f58b8fdbbbb1bd62840e03c5448870
             }
 
             for (int i = 0; i < numbers.Count; i++)
